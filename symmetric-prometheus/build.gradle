@@ -1,0 +1,14 @@
+apply from: symAssembleDir + '/common.gradle'
+
+    description = 'Prometheus'
+
+    dependencies {
+        api project(":symmetric-core")
+        compileOnly project(":symmetric-swagger-ui")
+        api "org.springframework:spring-context:$springVersion"
+        api "org.springframework:spring-webmvc:$springVersion"
+
+        api 'io.micrometer:micrometer-core:1.9.7'
+        api 'io.micrometer:micrometer-registry-prometheus:1.9.7'
+        api 'javax.servlet:javax.servlet-api:4.0.1'
+    }
